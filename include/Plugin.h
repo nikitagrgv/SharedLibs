@@ -12,10 +12,17 @@ public:
 };
 
 typedef Plugin *(*createPluginFunc)();
-typedef void (*deletePluginFunc)(Plugin *);
 
 extern "C"
 {
 	DLL_EXPORT Plugin *createPlugin();
-	DLL_EXPORT void deletePlugin(Plugin *plugin);
 }
+
+#define EXPORT_PLUGIN(plugin_class_name)                                                           \
+	extern "C"                                                                                     \
+	{                                                                                              \
+		Plugin *createPlugin()                                                                     \
+		{                                                                                          \
+			return new plugin_class_name;                                                          \
+		}                                                                                          \
+	}
