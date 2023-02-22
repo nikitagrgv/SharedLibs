@@ -8,3 +8,4 @@ include_directories(${INCLUDE_DIR})
 
 add_subdirectory(SharedLibrary)
 add_subdirectory(SomeProgram)
+add_subdirectory(SomePlugin)
