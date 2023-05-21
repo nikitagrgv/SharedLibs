@@ -3,6 +3,8 @@ project(SomeProgramProject)
 
 add_executable(SomeProgram
         main.cpp
+        PluginsLoader.h
+        PluginsLoader.cpp
         )
 
 target_link_libraries(SomeProgram SharedLibrary)
